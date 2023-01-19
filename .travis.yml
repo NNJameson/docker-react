@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+  - docker
+
+  - docker build -t NNJameson/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true NNJameson/docker-react npm run test
